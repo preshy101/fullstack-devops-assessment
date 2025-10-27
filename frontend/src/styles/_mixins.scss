@@ -1,0 +1,33 @@
+@import './variables';
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin scrollbar-custom {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $gray-2;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $gray-4;
+    border-radius: 4px;
+
+    &:hover {
+      background: $gray-5;
+    }
+  }
+}

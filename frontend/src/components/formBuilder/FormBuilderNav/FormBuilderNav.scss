@@ -1,0 +1,71 @@
+
+@import '../../../styles/variables';
+
+.form-builder-nav {
+  height: $nav-height;
+  background: $white;
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacing-lg;
+  position: sticky;
+  top: $header-height;
+  z-index: 99;
+
+  .nav-tabs-container {
+    flex: 1;
+
+    .builder-tabs {
+      .ant-tabs-nav {
+        margin-bottom: 0;
+
+        &::before {
+          border-bottom: none;
+        }
+
+        .ant-tabs-tab {
+          padding: $spacing-sm $spacing-md;
+          color: $text-secondary;
+          font-size: $font-size-sm;
+          
+          &:hover {
+            color: $text-primary;
+          }
+
+          &.ant-tabs-tab-active {
+            .ant-tabs-tab-btn {
+              color: $primary-color;
+              font-weight: $font-weight-medium;
+            }
+          }
+        }
+
+        .ant-tabs-ink-bar {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+
+    .action-icon {
+      font-size: $font-size-base;
+      color: $text-secondary;
+      cursor: pointer;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $text-primary;
+      }
+
+      &.chevron {
+        margin-left: $spacing-xs;
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+
+@import '../../../styles/variables';
+
+.right-sidebar {
+  width: $right-sidebar-width;
+  background: $white;
+  border-left: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - #{$header-height} - #{$nav-height});
+  position: sticky;
+  top: calc(#{$header-height} + #{$nav-height});
+
+  .sidebar-header {
+    padding: $spacing-md $spacing-lg;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      margin: 0;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      color: $text-primary;
+    }
+  }
+
+  .sidebar-tabs {
+    border-bottom: 1px solid $border-color;
+
+    .ant-tabs {
+      .ant-tabs-nav {
+        margin: 0;
+        padding: 0 $spacing-lg;
+
+        .ant-tabs-tab {
+          padding: $spacing-sm $spacing-md;
+          font-size: $font-size-sm;
+
+          &.ant-tabs-tab-active {
+            .ant-tabs-tab-btn {
+              color: $primary-color;
+              font-weight: $font-weight-medium;
+            }
+          }
+        }
+
+        .ant-tabs-ink-bar {
+          background-color: $primary-color;
+        }
+      }
+
+      .ant-tabs-content-holder {
+        display: none;
+      }
+    }
+  }
+
+  .sidebar-search {
+    padding: $spacing-md $spacing-lg;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: $spacing-md 0;
+
+    .fields-list {
+      .ant-collapse {
+        border: none;
+        background: transparent;
+
+        .ant-collapse-item {
+          border: none;
+
+          .ant-collapse-header {
+            padding: $spacing-sm $spacing-lg;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-semibold;
+            color: $text-primary;
+
+            .ant-collapse-expand-icon {
+              padding-inline-end: $spacing-sm;
+            }
+          }
+
+          .ant-collapse-content {
+            border: none;
+            background: transparent;
+
+            .ant-collapse-content-box {
+              padding: 0;
+            }
+          }
+        }
+      }
+
+      .field-items {
+        display: flex;
+        flex-direction: column;
+
+        .field-item {
+          display: flex;
+          align-items: center;
+          gap: $spacing-sm;
+          padding: $spacing-sm $spacing-xl;
+          cursor: grab;
+          transition: all $transition-fast;
+          font-size: $font-size-sm;
+          color: $text-primary;
+          user-select: none;
+
+          &:hover {
+            background: $bg-secondary;
+          }
+
+          &:active {
+            cursor: grabbing;
+            opacity: 0.7;
+          }
+
+          .field-icon {
+            color: $text-secondary;
+            display: flex;
+            align-items: center;
+          }
+
+          .field-name {
+            flex: 1;
+          }
+        }
+
+        .field-empty {
+          padding: $spacing-md $spacing-xl;
+          color: $text-tertiary;
+          font-size: $font-size-sm;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

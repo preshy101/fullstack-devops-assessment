@@ -1,0 +1,15 @@
+
+@import '../../styles/variables';
+
+.form-builder-page {
+  min-height: 100vh;
+  background: $bg-secondary;
+  display: flex;
+  flex-direction: column;
+
+  .form-builder-content {
+    display: flex;
+    flex: 1;
+    position: relative;
+  }
+}

@@ -1,0 +1,52 @@
+
+@import '../../../styles/variables';
+
+.section {
+  margin-bottom: $spacing-lg;
+
+  .section-empty {
+    background: $white;
+    border: 2px dashed $border-color;
+    border-radius: $border-radius-lg;
+    padding: $spacing-xxl;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-base;
+
+    &:hover {
+      border-color: $primary-color;
+      background: $primary-light;
+    }
+
+    .empty-content {
+      .empty-text {
+        font-size: $font-size-base;
+        color: $text-tertiary;
+        margin-bottom: $spacing-sm;
+      }
+    }
+  }
+
+  .section-groups {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .section-footer {
+    margin-top: $spacing-md;
+
+    .ant-btn-dashed {
+      border-color: $border-color;
+      color: $text-secondary;
+
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
+}

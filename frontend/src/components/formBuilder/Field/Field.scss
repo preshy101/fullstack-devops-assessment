@@ -1,0 +1,136 @@
+
+@import '../../../styles/variables';
+
+.field {
+  background: $white;
+  border: 1px solid $border-color-light;
+  border-radius: $border-radius-base;
+  padding: $spacing-md;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $border-color;
+    box-shadow: $shadow-sm;
+  }
+
+  &.dragging {
+    opacity: 0.5;
+    box-shadow: $shadow-lg;
+  }
+
+  &.field-full {
+    grid-column: 1 / -1;
+  }
+
+  .field-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-sm;
+
+    .field-label-section {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+      flex: 1;
+
+      .drag-handle {
+        cursor: grab;
+        color: $drag-handle-color;
+        display: flex;
+        align-items: center;
+        padding: $spacing-xs;
+
+        &:hover {
+          color: $drag-active-color;
+        }
+
+        &:active {
+          cursor: grabbing;
+        }
+      }
+
+      .field-label {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        color: $text-primary;
+        margin: 0;
+      }
+    }
+
+    .field-actions {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+
+      .field-toggles {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+
+        .toggle-label {
+          font-size: $font-size-sm;
+          color: $text-secondary;
+        }
+
+        .ant-switch-checked {
+          background-color: $primary-color;
+        }
+      }
+
+      .ant-btn-text {
+        color: $text-secondary;
+
+        &:hover {
+          color: $text-primary;
+        }
+
+        &.ant-btn-dangerous:hover {
+          color: $error-color;
+        }
+      }
+    }
+  }
+
+  .field-input {
+    .ant-input,
+    .ant-select,
+    .ant-radio-group,
+    .ant-checkbox-group {
+      width: 100%;
+    }
+
+    .ant-radio-group,
+    .ant-checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+
+    .field-upload {
+      background: $bg-secondary;
+      border: 1px dashed $border-color;
+      padding: $spacing-lg;
+
+      .ant-upload-drag-icon {
+        margin-bottom: $spacing-sm;
+
+        .anticon {
+          color: $primary-color;
+          font-size: 48px;
+        }
+      }
+
+      .ant-upload-text {
+        font-size: $font-size-sm;
+        color: $text-primary;
+        margin-bottom: $spacing-xs;
+      }
+
+      .ant-upload-hint {
+        font-size: $font-size-sm;
+        color: $text-tertiary;
+      }
+    }
+  }
+}

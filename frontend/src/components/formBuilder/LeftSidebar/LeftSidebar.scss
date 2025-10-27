@@ -1,0 +1,123 @@
+
+@import '../../../styles/variables';
+
+.left-sidebar {
+  width: $sidebar-width;
+  background: $bg-secondary;
+  border-right: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-md 0;
+  position: sticky;
+  top: calc(#{$header-height} + #{$nav-height});
+  height: calc(100vh - #{$header-height} - #{$nav-height});
+  overflow-y: auto;
+
+  .sidebar-top {
+    margin-bottom: $spacing-lg;
+
+    .add-section-btn {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      width: 40px;
+      height: 40px;
+
+      &:hover {
+        background-color: $primary-hover;
+        border-color: $primary-hover;
+      }
+    }
+  }
+
+  .sidebar-actions {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+
+    .action-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-secondary;
+
+      &:hover:not(:disabled) {
+        color: $primary-color;
+        background-color: $primary-light;
+      }
+
+      &:disabled {
+        color: $text-disabled;
+      }
+    }
+  }
+
+  .sidebar-sections {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    width: 100%;
+    padding: 0 $spacing-sm;
+    overflow-y: auto;
+
+    .section-indicator {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $white;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-base;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      color: $text-primary;
+      cursor: pointer;
+      transition: all $transition-fast;
+      margin: 0 auto;
+
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+      }
+
+      &.active {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        color: $white;
+      }
+    }
+  }
+
+  .sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-xs;
+    margin-top: $spacing-lg;
+
+    .action-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-secondary;
+
+      &:hover {
+        color: $primary-color;
+        background-color: $primary-light;
+      }
+    }
+
+    .zoom-level {
+      font-size: $font-size-sm;
+      color: $text-secondary;
+      font-weight: $font-weight-medium;
+    }
+  }
+}

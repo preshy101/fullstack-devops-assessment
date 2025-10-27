@@ -1,0 +1,74 @@
+
+@import '../../../styles/variables';
+
+.form-builder-header {
+  height: $header-height;
+  background: $white;
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $spacing-lg;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+
+    .back-button {
+      color: $text-secondary;
+      
+      &:hover {
+        color: $text-primary;
+      }
+    }
+
+    .form-info {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+
+      .form-icons {
+        display: flex;
+        gap: $spacing-xs;
+
+        .icon {
+          font-size: $font-size-lg;
+          color: $text-secondary;
+        }
+      }
+
+      .form-details {
+        .form-title {
+          margin: 0;
+          font-size: $font-size-base;
+          font-weight: $font-weight-semibold;
+          color: $text-primary;
+          line-height: 1.4;
+        }
+
+        .form-id {
+          margin: 0;
+          font-size: $font-size-sm;
+          color: $text-secondary;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  .header-right {
+    .ant-btn-primary {
+      background-color: $primary-color;
+      border-color: $primary-color;
+
+      &:hover {
+        background-color: $primary-hover;
+        border-color: $primary-hover;
+      }
+    }
+  }
+}
