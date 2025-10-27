@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSortable } from '@dnd-kit/sortable';
@@ -36,13 +35,24 @@ const Group = ({ group, sectionId }) => {
 
   const { setNodeRef: setDroppableRef, isOver } = useDroppable({
     id: `group-droppable-${group.id}`,
-    data: { type: 'group', sectionId, groupId: group.id }
+    data: { 
+      type: 'group', 
+      sectionId, 
+      groupId: group.id,
+      accepts: ['new-field'] // Explicitly accept new fields
+    }
   });
 
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
     opacity: isDragging ? 0.5 : 1,
+  };
+
+  // Combine refs for both sortable and droppable
+  const setNodeRefs = (node) => {
+    setSortableRef(node);
+    setDroppableRef(node);
   };
 
   const handleRequiredToggle = (checked) => {
@@ -97,7 +107,7 @@ const Group = ({ group, sectionId }) => {
 
   return (
     <div 
-      ref={setSortableRef}
+      ref={setNodeRefs}
       style={style}
       className={`group ${isDragging ? 'dragging' : ''} ${isOver ? 'drop-target' : ''}`}
     >
@@ -181,7 +191,6 @@ const Group = ({ group, sectionId }) => {
       </div>
 
       <div 
-        ref={setDroppableRef}
         className={`group-content ${isOver ? 'drag-over' : ''}`}
       >
         {group.fields.length === 0 ? (

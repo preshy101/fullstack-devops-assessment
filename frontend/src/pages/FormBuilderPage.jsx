@@ -18,9 +18,7 @@ const FormBuilderPage = () => {
 
   // Initialize with a default section if none exist
   useEffect(() => {
-    if (sections.length === 0) {
-      // Optionally auto-add a first section
-      // dispatch(addSection());
+    if (sections.length === 0) { 
     }
   }, [sections, dispatch]);
 

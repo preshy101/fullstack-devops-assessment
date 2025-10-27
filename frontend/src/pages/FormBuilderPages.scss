@@ -1,5 +1,4 @@
-
-@import '../../styles/variables';
+@import '../styles/variables';
 
 .form-builder-page {
   min-height: 100vh;
@@ -11,5 +10,11 @@
     display: flex;
     flex: 1;
     position: relative;
+
+    .canvas-and-sidebar {
+      display: flex;
+      flex: 1;
+      position: relative;
+    }
   }
 }

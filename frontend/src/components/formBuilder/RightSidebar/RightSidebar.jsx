@@ -1,3 +1,4 @@
+// RightSidebar.jsx
 import React, { useState } from 'react';
 import { Input, Tabs, Collapse, Button } from 'antd';
 import { useDraggable } from '@dnd-kit/core';
@@ -8,7 +9,6 @@ import {
   MinusOutlined,
   CheckSquareOutlined,
   UserOutlined,
-  IdcardOutlined,
   PhoneOutlined,
   MailOutlined,
   CalendarOutlined,
@@ -58,16 +58,16 @@ const RightSidebar = ({ onClose }) => {
     {
       category: 'PRF - Account Profile',
       fields: [
-        { type: STANDARD_FIELD_TYPES.PHOTO, label: 'Photo', icon: <PictureOutlined /> },
-        { type: STANDARD_FIELD_TYPES.STATE, label: 'State', icon: <MinusOutlined /> },
-        { type: STANDARD_FIELD_TYPES.GENDER, label: 'Gender', icon: <UserOutlined /> },
-        { type: STANDARD_FIELD_TYPES.EMAIL_ADDRESS, label: 'Email Address', icon: <MailOutlined /> },
-        { type: STANDARD_FIELD_TYPES.LAST_NAME, label: 'Last Name', icon: <UserOutlined /> },
-        { type: STANDARD_FIELD_TYPES.DATE_OF_BIRTH, label: 'Date of Birth', icon: <CalendarOutlined /> },
-        { type: STANDARD_FIELD_TYPES.DO_YOU_HAVE_RESIDENCY, label: 'Do you have residency?', icon: <CheckSquareOutlined /> },
-        { type: STANDARD_FIELD_TYPES.SALUTATION, label: 'Salutation', icon: <MinusOutlined /> },
-        { type: STANDARD_FIELD_TYPES.MOBILE_NUMBER, label: 'Mobile Number', icon: <PhoneOutlined /> },
-        { type: STANDARD_FIELD_TYPES.FIRST_NAME, label: 'First Name', icon: <UserOutlined /> },
+        { type: 'photo', label: 'Photo', icon: <PictureOutlined /> },
+        { type: 'state', label: 'State', icon: <MinusOutlined /> },
+        { type: 'gender', label: 'Gender', icon: <UserOutlined /> },
+        { type: 'email_address', label: 'Email Address', icon: <MailOutlined /> },
+        { type: 'last_name', label: 'Last Name', icon: <UserOutlined /> },
+        { type: 'date_of_birth', label: 'Date of Birth', icon: <CalendarOutlined /> },
+        { type: 'do_you_have_residency', label: 'Do you have residency?', icon: <CheckSquareOutlined /> },
+        { type: 'salutation', label: 'Salutation', icon: <MinusOutlined /> },
+        { type: 'mobile_number', label: 'Mobile Number', icon: <PhoneOutlined /> },
+        { type: 'first_name', label: 'First Name', icon: <UserOutlined /> },
       ]
     },
     {
@@ -88,34 +88,34 @@ const RightSidebar = ({ onClose }) => {
     }
   ];
 
-  // Custom Fields (from Image 4)
+  // Custom Fields
   const customFields = [
-    { type: CUSTOM_FIELD_TYPES.AMOUNTINPUT, label: 'AmountInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.BACKGROUNDIMAGE_MARKUP, label: 'BackgroundImageMarkup', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.CAMERA, label: 'Camera', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.CARDDETAILS, label: 'CardDetails', icon: <CheckSquareOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.DATEPICKER, label: 'DatePicker', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.DATETIME_PICKER, label: 'DateTimePicker', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.DRAWING_SIGNATURE_INPUT, label: 'DrawingSignatureInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.DROPDOWN, label: 'Dropdown', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.DROPDOWN_AUTOSUGGEST_INPUT, label: 'DropdownAutosuggestInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.EMAIL_INPUT, label: 'EmailInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.FILE_INPUT, label: 'FileInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.FILE_UPLOAD_RATING, label: 'FileUploadRating', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.GEOLOCATION_PICKER_INPUT, label: 'GeoLocationPickerInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.HEADER_TEXT, label: 'HeaderText', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.HIDDEN_INPUT, label: 'HiddenInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.HIDDEN_SECTION_INPUT, label: 'HiddenSectionInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.INPUT_TABLE, label: 'InputTable', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.NUMBER_INPUT, label: 'NumberInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.NUMBER_DROPDOWN_INPUT, label: 'NumberDropdownInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.PARAGRAPH, label: 'Paragraph', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.PERCENTAGE_INPUT, label: 'PercentageInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.PHONE_NUMBER_INPUT, label: 'PhoneNumberInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.PROGRESS_BAR_INPUT, label: 'ProgressBarInput', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.RADIO_BUTTONS, label: 'RadioButtons', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.RATING_SCALE, label: 'RatingScale', icon: <MinusOutlined /> },
-    { type: CUSTOM_FIELD_TYPES.REPEATER, label: 'Repeater', icon: <MinusOutlined /> },
+    { type: 'amountinput', label: 'AmountInput', icon: <MinusOutlined /> },
+    { type: 'backgroundimage_markup', label: 'BackgroundImageMarkup', icon: <MinusOutlined /> },
+    { type: 'camera', label: 'Camera', icon: <MinusOutlined /> },
+    { type: 'carddetails', label: 'CardDetails', icon: <CheckSquareOutlined /> },
+    { type: 'datepicker', label: 'DatePicker', icon: <MinusOutlined /> },
+    { type: 'datetime_picker', label: 'DateTimePicker', icon: <MinusOutlined /> },
+    { type: 'drawing_signature_input', label: 'DrawingSignatureInput', icon: <MinusOutlined /> },
+    { type: 'dropdown', label: 'Dropdown', icon: <MinusOutlined /> },
+    { type: 'dropdown_autosuggest_input', label: 'DropdownAutosuggestInput', icon: <MinusOutlined /> },
+    { type: 'email_input', label: 'EmailInput', icon: <MinusOutlined /> },
+    { type: 'file_input', label: 'FileInput', icon: <MinusOutlined /> },
+    { type: 'file_upload_rating', label: 'FileUploadRating', icon: <MinusOutlined /> },
+    { type: 'geolocation_picker_input', label: 'GeoLocationPickerInput', icon: <MinusOutlined /> },
+    { type: 'header_text', label: 'HeaderText', icon: <MinusOutlined /> },
+    { type: 'hidden_input', label: 'HiddenInput', icon: <MinusOutlined /> },
+    { type: 'hidden_section_input', label: 'HiddenSectionInput', icon: <MinusOutlined /> },
+    { type: 'input_table', label: 'InputTable', icon: <MinusOutlined /> },
+    { type: 'number_input', label: 'NumberInput', icon: <MinusOutlined /> },
+    { type: 'number_dropdown_input', label: 'NumberDropdownInput', icon: <MinusOutlined /> },
+    { type: 'paragraph', label: 'Paragraph', icon: <MinusOutlined /> },
+    { type: 'percentage_input', label: 'PercentageInput', icon: <MinusOutlined /> },
+    { type: 'phone_number_input', label: 'PhoneNumberInput', icon: <MinusOutlined /> },
+    { type: 'progress_bar_input', label: 'ProgressBarInput', icon: <MinusOutlined /> },
+    { type: 'radio_buttons', label: 'RadioButtons', icon: <MinusOutlined /> },
+    { type: 'rating_scale', label: 'RatingScale', icon: <MinusOutlined /> },
+    { type: 'repeater', label: 'Repeater', icon: <MinusOutlined /> },
   ];
 
   const filterFields = (fields) => {
